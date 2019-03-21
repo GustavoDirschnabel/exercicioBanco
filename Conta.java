@@ -4,15 +4,16 @@ public class Conta {
 	protected double limiteSaq;
 	protected double saldo;
 	protected int numero;
-	public Conta(double saldo, int numero) {
+	private Cliente cliente;
+	private Agencia agencia;
+	
+	public Conta(double saldo, int numero, Cliente cliente, Agencia agencia) {
+		this.cliente = cliente;
+		this.agencia = agencia;
 		limiteSaq = 1200.0;
 		this.saldo = saldo;
 		this.numero = numero;
-	}
-	public Conta() {
-		limiteSaq = 1200.0;
-		this.saldo = 0.0;
-		this.numero = 0;
+		
 	}
 
 	public double getLimiteSaq() {
