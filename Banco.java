@@ -2,9 +2,13 @@
 
 public class Banco {
 	private Conta[] contas;
+	private Agencia[] agencias;
+	private Cliente[] clientes;
 	
-	Banco(Conta[] contas){
+	Banco(Conta[] contas, Agencia[] agencias, Cliente[] clientes){
 		this.contas = contas;
+		this.agencias = agencias;
+		this.clientes = clientes;
 	}
 	
 	public void criarContaCorrente (int numero, double saldo, boolean chequeS, Movimentacao[] moviment, double limiteCq) {
