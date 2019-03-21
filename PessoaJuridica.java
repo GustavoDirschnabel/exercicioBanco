@@ -1,8 +1,8 @@
 public class PessoaJuridica {
-	private int CPNJ;
+	private int CNPJ;
 	
-	public PessoaJuridica(int CPNJ, String nome, String endereco, int telefone, String email, Conta[] listaContas) {
+	public PessoaJuridica(int CNPJ, String nome, String endereco, int telefone, String email, Conta[] listaContas) {
 		super(nome, endereco,telefone,email,listaContas);
-		this.CPNJ = CPNJ;
+		this.CNPJ = CNPJ;
 	}
 }
