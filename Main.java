@@ -1,9 +1,7 @@
-
-//MAIN NAO FOI TERMINADO
+import java.util.Scanner;
 public class Main {
-
 	public static void main(String[] args) {
-		Conta[] contas = {}
+		Scanner input = new Scanner(System.in);
 		Banco banco = new banco();
 	}
 
