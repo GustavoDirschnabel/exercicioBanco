@@ -5,14 +5,14 @@ public class Banco {
 	private Agencia[] agencias;
 	private Cliente[] clientes;
 	
-	Banco(Conta[] contas, Agencia[] agencias, Cliente[] clientes){
-		this.contas = contas;
-		this.agencias = agencias;
-		this.clientes = clientes;
+	public Banco(){
+		this.contas = new Conta[0];
+		this.agencias = new Agencia[0];
+		this.clientes = new Cliente[0];
 	}
 	
-	public void criarContaCorrente (int numero, double saldo, boolean chequeS, double limiteCq) {
-	ContaCorrente novaConta = new ContaCorrente(numero, saldo, chequeS, limiteCq);
+	public void criarContaCorrente (int numero, double saldo, boolean chequeS, Movimentacao[] moviment, double limiteCq, Cliente cliente, Agencia agencia) {
+	ContaCorrente novaConta = new ContaCorrente(numero, saldo, chequeS, moviment, limiteCq,cliente,agencia);
 	Conta[] contas = new Conta[this.contas.length + 1];
 		for(int i = 0; i < contas.length - 1; i++) {
 			contas[i] = this.contas[i];
@@ -21,8 +21,8 @@ public class Banco {
 	this.contas = contas;
 	}
 	
-	public void criarContaPoupanca (int variacao, double rendMen, double saldo, int numero) {
-		ContaPoupanca novaConta = new ContaPoupanca(variacao, rendMen, saldo, numero);
+	public void criarContaPoupanca (int variacao, double rendMen, double saldo, int numero, Cliente cliente, Agencia agencia) {
+		ContaPoupanca novaConta = new ContaPoupanca(variacao, rendMen, saldo, numero,cliente, agencia);
 		Conta[] contas = new Conta[this.contas.length + 1];
 			for(int i = 0; i < contas.length - 1; i++) {
 				contas[i] = this.contas[i];
@@ -91,19 +91,18 @@ public class Banco {
 	}
 	
 	public void transferencia( int numeroconta1, int numeroconta2, int valor) {
-		Conta conta1 = new Conta();
-		Conta conta2 = new Conta();
+		int index1 = 0, index2 = 0;
 		for(int i = 0; i < contas.length; i++) {
 			if(contas[i].getNumero() == numeroconta1) {
-				conta1 = contas[i];
+				index1 = i;
 			}
 			if(contas[i].getNumero() == numeroconta2) {
-				conta2 = contas[i];
+				index2 = i;
 			}
 		}
-		if(conta1.getSaldo() > valor) {
-			conta1.setSaldo(conta1.getSaldo()- valor);
-			conta2.setSaldo(conta2.getSaldo() + valor);
+		if(contas[index1].getSaldo() >= valor) {
+			contas[index1].setSaldo(contas[index1].getSaldo()- valor);
+			contas[index2].setSaldo(contas[index2].getSaldo() + valor);
 		}
 	}
 }

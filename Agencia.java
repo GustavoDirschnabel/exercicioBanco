@@ -1,4 +1,5 @@
 
+
 public class Agencia {
 	private String nome;
 	private String endereco;
@@ -6,11 +7,11 @@ public class Agencia {
 	private Cliente[] listaClientes;
 	private Conta[] listaContas;
 	
-	public Agencia(String nome, String endereco, int numero, Clinte[] listaClientes, Conta[] listaContas) {
+	public Agencia(String nome, String endereco, int numero, Cliente[] listaClientes, Conta[] listaContas) {
 		this.nome = nome;
 		this.endereco = endereco;
 		this.numero = numero;
-		this.listaClintes = listaClientes;
+		this.listaClientes = listaClientes;
 		this.listaContas = listaContas;
 	}
 	
