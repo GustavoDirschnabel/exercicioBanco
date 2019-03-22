@@ -11,8 +11,8 @@ public class Banco {
 		this.clientes = clientes;
 	}
 	
-	public void criarContaCorrente (int numero, double saldo, boolean chequeS, Movimentacao[] moviment, double limiteCq) {
-	ContaCorrente novaConta = new ContaCorrente(numero, saldo, chequeS, moviment, limiteCq);
+	public void criarContaCorrente (int numero, double saldo, boolean chequeS, double limiteCq) {
+	ContaCorrente novaConta = new ContaCorrente(numero, saldo, chequeS, limiteCq);
 	Conta[] contas = new Conta[this.contas.length + 1];
 		for(int i = 0; i < contas.length - 1; i++) {
 			contas[i] = this.contas[i];
