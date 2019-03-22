@@ -13,7 +13,14 @@ public class Conta {
 		limiteSaq = 1200.0;
 		this.saldo = saldo;
 		this.numero = numero;
-		
+	}
+	
+	public Conta() {
+		this.cliente = null;
+		this.agencia = null;
+		limiteSaq = 1200.0;
+		this.saldo = 0;
+		this.numero = 0;
 	}
 
 	public double getLimiteSaq() {

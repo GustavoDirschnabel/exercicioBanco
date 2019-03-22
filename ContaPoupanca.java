@@ -5,8 +5,8 @@ public class ContaPoupanca extends Conta {
 	private double rendMen;
 	
 	
-	public ContaPoupanca(int variacao, double rendMen, double saldo, int numero) {
-		super(saldo, numero);
+	public ContaPoupanca(int variacao, double rendMen, double saldo, int numero, Cliente cliente, Agencia agencia) {
+		super(saldo, numero, cliente, agencia);
 		this.variacao = variacao;
 		this.rendMen = rendMen;
 	}

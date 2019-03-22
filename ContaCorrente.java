@@ -6,10 +6,10 @@ public class ContaCorrente extends Conta {
 	private double limiteCheque;
 	private Movimentacao [] movimentacoes;
 	
-	public ContaCorrente(int numero, double saldo, boolean chequeS, double limiteCq){
-	super(saldo, numero);
+	public ContaCorrente(int numero, double saldo, boolean chequeS, Movimentacao[] moviment, double limiteCq,Cliente cliente, Agencia agencia){
+	super(saldo, numero, cliente, agencia);
 	this.chequeS = chequeS;
-	movimentacoes = new Movimentacao[0];
+	this.movimentacoes = moviment;
 	if(chequeS) {
 		this.limiteCheque = limiteCq;
 	}else {
